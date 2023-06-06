@@ -1,0 +1,2 @@
+﻿UniqueIndex,fMoveSpeed,fMoveRun,fAccMoveSpeed,fAddFireRecoil_X,fAddFireRecoil_Y,
+1,5,12,20,0,5,
