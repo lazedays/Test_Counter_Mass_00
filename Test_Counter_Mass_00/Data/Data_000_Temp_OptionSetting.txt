@@ -1,0 +1,2 @@
+﻿UniqueIndex,fMinLimt_Y,fMaxLimt_Y,fRotationSpeedX,fRotationSpeedY,
+1,-60,85,200,200,

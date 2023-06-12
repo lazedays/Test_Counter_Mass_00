@@ -14,6 +14,10 @@ public class Camera_FPS_00 : MonoBehaviour
     public Camera FpsCamera { get { return fpsCamera; }  set { fpsCamera = value; } }
 
     [SerializeField]
+    private Transform tsmTempMuzzle;
+    public Transform TsmTempMuzzle { get { return tsmTempMuzzle; } }
+
+    [SerializeField]
     private GameObject followPlayer;
     public GameObject FollowPlayer { get { return followPlayer; } set { followPlayer = value; } }
 
@@ -49,6 +53,16 @@ public class Camera_FPS_00 : MonoBehaviour
 
     private bool isRecoil_y = false; //카메라 반동 여부
 
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+
+        fCurFireRecoil_Y = 0.0f;
+        fCurFireRecoil_X = 0.0f;
+
+        isRecoil_y = false;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -129,12 +143,7 @@ public class Camera_FPS_00 : MonoBehaviour
                 fPosY_fire -= (Input.GetAxis(String_.Mouse_Y)) * fRotationSpeedY * Time.deltaTime;
             }
 
-            if (_player != null && _player.IsFireingRecoil == false)
-                fPosY = ClampAngle(fPosY, fMinLimt_Y, fMaxLimt_Y);
-
-            //fPosY_fire = ClampAngle(fPosY_fire, fMinLimtY, fMaxLimtY);
-
-            //float temp_y = fPosY - 0;
+            fPosY = ClampAngle(fPosY, fMinLimt_Y, fMaxLimt_Y);
             float temp_y = fPosY - fCurFireRecoil_Y;
             temp_y = ClampAngle(temp_y, fMinLimt_Y, fMaxLimt_Y);
 
@@ -179,10 +188,11 @@ public class Camera_FPS_00 : MonoBehaviour
     }
 
 
-    public void PlayCameraRecoil() //반동 실행
+    public void PlayCameraRecoil(float addfireRacoil_x, float addfireRacoil_Y) //반동 실행
     {
         isRecoil_y = true;
-        fCurFireRecoil_Y += fAddFireRecoil_Y;
+        fCurFireRecoil_Y += addfireRacoil_Y;
+        //fCurFireRecoil_X += addfireRacoil_x;
         StartCoroutine(CoRecoil_Y());
         StartCoroutine(CoRecoilReset());
     }

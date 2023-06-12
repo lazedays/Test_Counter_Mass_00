@@ -1,0 +1,2 @@
+﻿UniqueIndex,MinLimt_Y,MaxLimt_Y,RotationSpeedX,RotationSpeedY,
+1,-60,85,200,200,

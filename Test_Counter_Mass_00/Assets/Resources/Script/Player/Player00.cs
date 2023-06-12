@@ -22,6 +22,8 @@ public partial class Player00 : MonoBehaviour
         InputControl();
         Mover();
         SyncParameters();
+
+        InputMouseFire();
     }
 
     private void Set()

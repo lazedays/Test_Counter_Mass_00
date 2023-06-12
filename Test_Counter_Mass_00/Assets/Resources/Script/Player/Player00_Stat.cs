@@ -2,17 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player00_Stat : MonoBehaviour
+public partial class Player00 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public class PlayerStat_Table
     {
-        
+        public float hp;
+        public float damage;
+        public float moveSpeed;
+        public float moveSpeedRuning;
+        public float slideSpeed;
+        public float jumpForce;
+
+        //public int roundMagMax;
+        //public float fireRate;
+        //public float bulletSpeed;
+        //public float bulletRange;
+
+        public float fireRecoil_Camera_Y;
+        public float fireRecoil_Camera_X;
+    }
+    public class PlayerStat_Total
+    {
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private PlayerStat_Table playerStatTable = new PlayerStat_Table();
+    public PlayerStat_Table PlayerStatTable { get { return playerStatTable; } }
+
+    private PlayerStat_Total playerStatTotal = new PlayerStat_Total();
+    public PlayerStat_Total PlayerStatTotal { get { return playerStatTotal; } }
+
+    public void SetPlayerStat_Table()
     {
-        
+
     }
+
 }

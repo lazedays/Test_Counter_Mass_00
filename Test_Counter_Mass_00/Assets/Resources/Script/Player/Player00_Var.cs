@@ -11,7 +11,7 @@ public partial class Player00 : MonoBehaviour
     [Space(20), SerializeField]
     private GameObject prefab_Camera;
     [SerializeField]
-    private Camera_FPS_00 fps_Camera;
+    private Camera_FPS_00 camera_fps;
 
     //------------------Control------------------
     [Space(20), SerializeField]

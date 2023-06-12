@@ -11,11 +11,14 @@ public class Data_000_Temp_PlayerStatRow : BaseTableRow , ICloneable
 {
      //테이블의 첫번째 컬럼은 무조건 UniqueIndex 여야 한다.
      public int m_UniqueIndex;
-     public float m_fMoveSpeed;
-     public float m_fMoveRun;
-     public float m_fAccMoveSpeed;
-     public float m_fAddFireRecoil_X;
-     public float m_fAddFireRecoil_Y;
+     public float m_MoveSpeed;
+     public float m_MoveSpeed_Run;
+     public float m_MoveSpeed_Slide;
+     public float m_JumpForce;
+     public float m_AccMoveSpeed;
+     public float m_AddFireRecoil_X;
+     public float m_AddFireRecoil_Y;
+     public float m_Hp;
      public override void DoField(string line)
      {
          string[] lineArray = line.Split(',');
@@ -23,18 +26,24 @@ public class Data_000_Temp_PlayerStatRow : BaseTableRow , ICloneable
          //반드시 제일 첫번째
 #if UNITY_EDITOR
           m_UniqueIndex = Convert.ToInt32(lineArray[count++]);
-          m_fMoveSpeed = Convert.ToSingle(lineArray[count++]);
-          m_fMoveRun = Convert.ToSingle(lineArray[count++]);
-          m_fAccMoveSpeed = Convert.ToSingle(lineArray[count++]);
-          m_fAddFireRecoil_X = Convert.ToSingle(lineArray[count++]);
-          m_fAddFireRecoil_Y = Convert.ToSingle(lineArray[count++]);
+          m_MoveSpeed = Convert.ToSingle(lineArray[count++]);
+          m_MoveSpeed_Run = Convert.ToSingle(lineArray[count++]);
+          m_MoveSpeed_Slide = Convert.ToSingle(lineArray[count++]);
+          m_JumpForce = Convert.ToSingle(lineArray[count++]);
+          m_AccMoveSpeed = Convert.ToSingle(lineArray[count++]);
+          m_AddFireRecoil_X = Convert.ToSingle(lineArray[count++]);
+          m_AddFireRecoil_Y = Convert.ToSingle(lineArray[count++]);
+          m_Hp = Convert.ToSingle(lineArray[count++]);
 #else // 예외 처리 추가
           int.TryParse(lineArray[count++], out m_UniqueIndex);
-          float.TryParse(lineArray[count++], out m_fMoveSpeed);
-          float.TryParse(lineArray[count++], out m_fMoveRun);
-          float.TryParse(lineArray[count++], out m_fAccMoveSpeed);
-          float.TryParse(lineArray[count++], out m_fAddFireRecoil_X);
-          float.TryParse(lineArray[count++], out m_fAddFireRecoil_Y);
+          float.TryParse(lineArray[count++], out m_MoveSpeed);
+          float.TryParse(lineArray[count++], out m_MoveSpeed_Run);
+          float.TryParse(lineArray[count++], out m_MoveSpeed_Slide);
+          float.TryParse(lineArray[count++], out m_JumpForce);
+          float.TryParse(lineArray[count++], out m_AccMoveSpeed);
+          float.TryParse(lineArray[count++], out m_AddFireRecoil_X);
+          float.TryParse(lineArray[count++], out m_AddFireRecoil_Y);
+          float.TryParse(lineArray[count++], out m_Hp);
 #endif
      }
      public object Clone()

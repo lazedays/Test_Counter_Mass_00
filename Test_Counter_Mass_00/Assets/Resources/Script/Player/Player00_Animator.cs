@@ -7,10 +7,10 @@ public partial class Player00 : MonoBehaviour
     [Space(20), SerializeField]
     private Animator animatorUpperBody;
 
-    private readonly int hashToMoveSpeed = Animator.StringToHash("fMoveSpeed");
-    private readonly int hashToisSlideing = Animator.StringToHash("isSlideing");
-    private readonly int hashToReloadTrigger = Animator.StringToHash("reloadTrigger");
-    private readonly int hashToWeaponDrawTrigger = Animator.StringToHash("weaponDrawTrigger");
+    private readonly int hashToMoveSpeed = Animator.StringToHash(String_.fMoveSpeed);
+    private readonly int hashToisSlideing = Animator.StringToHash(String_.isSlideing);
+    private readonly int hashToReloadTrigger = Animator.StringToHash(String_.reloadTrigger);
+    private readonly int hashToWeaponDrawTrigger = Animator.StringToHash(String_.weaponDrawTrigger);
 
     private void SyncParameters()
     {

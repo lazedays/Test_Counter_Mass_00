@@ -1,0 +1,2 @@
+﻿UniqueIndex,Name,Shoot_Type,Reload_Time,Bullet_Type,Type,Fire_Rate,Spread,Dmg,FireRecoil_Camera_X,FireRecoil_Camera_Y,
+1,더미 SMG,0,1,0,0,0.5,1,1,0,3,
