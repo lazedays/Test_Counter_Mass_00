@@ -17,4 +17,10 @@ public static class Enums_
 		FIRE_MOD_SEMI_AUTO,
 	}
 
+	public enum Map_Move_Point
+	{
+		POINT_NEXT_MOVE,
+        POINT_ARRIVE,
+    }
+
 }

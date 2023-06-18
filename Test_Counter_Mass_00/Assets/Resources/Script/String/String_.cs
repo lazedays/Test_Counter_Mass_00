@@ -4,7 +4,10 @@ using UnityEngine;
 
 public static class String_
 {
+    public const string Object = "Object";
     public const string Player = "Player";
+    public const string AimAssist = "AimAssist";
+    public const string Enemy = "Enemy";
 
     public const string Mouse_X = "Mouse X";
     public const string Mouse_Y = "Mouse Y";

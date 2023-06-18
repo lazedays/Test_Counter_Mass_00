@@ -18,6 +18,10 @@ public class Camera_FPS_00 : MonoBehaviour
     public Transform TsmTempMuzzle { get { return tsmTempMuzzle; } }
 
     [SerializeField]
+    private GameObject aimAssist;
+    public GameObject AimAssist { get { return aimAssist; } }
+
+    [SerializeField]
     private GameObject followPlayer;
     public GameObject FollowPlayer { get { return followPlayer; } set { followPlayer = value; } }
 

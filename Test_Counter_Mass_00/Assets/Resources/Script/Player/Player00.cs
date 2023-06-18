@@ -19,12 +19,15 @@ public partial class Player00 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         InputControl();
         Mover();
         SyncParameters();
 
+        UpdateFireDir();
         InputMouseFire();
     }
+    
 
     private void Set()
     {
@@ -53,5 +56,10 @@ public partial class Player00 : MonoBehaviour
         fMaxSpeedRun = TableManager._DATA_000_TEMP_PLAYERSTAT.GetRow(1).m_fMoveRun;
 
         Debug.Log(fMaxSpeedRun);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        
     }
 }
